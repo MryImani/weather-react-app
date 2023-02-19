@@ -15,6 +15,7 @@ export default function Weather() {
   }
   function handleSubmit(event) {
     event.preventDefault();
+    setLoaded(false);
     SearchCity(value);
   }
   function SearchCity(city) {
