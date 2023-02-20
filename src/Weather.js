@@ -6,9 +6,10 @@ import getTheme from "./getTheme";
 import getDateAndTime from "./getDateAndTime";
 import axios from "axios";
 export default function Weather() {
+  let currentLocation = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const [weather, setWeather] = useState({});
   const [loaded, setLoaded] = useState(false);
-  const [value, setValue] = useState("Mashhad");
+  const [value, setValue] = useState(currentLocation.split("/")[1]);
   function updateCity(event) {
     event.preventDefault();
     setValue(event.target.value);

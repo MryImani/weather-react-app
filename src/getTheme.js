@@ -38,6 +38,12 @@ export default function getTheme(weatherDescription) {
       iconSrc:
         "https://shecodes-assets.s3.amazonaws.com/api/weather/icons/thunderstorm-day.png",
     },
+    fog: {
+      backgroundUrl:
+        "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQd0RFNOGf7N_UKPZBKzTfuTJ_sZupLCbKiSbsL3lGavJcRfiukOWYgeLUyIRc73L5FPfdpYDP-kQMY0_XjGSw",
+      iconSrc:
+        "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-day.png",
+    },
   };
   if (weatherDescription.includes("thunderstorm")) {
     return theme.Thunderstorm;
@@ -68,5 +74,7 @@ export default function getTheme(weatherDescription) {
     });
 
     return theme.Clouds;
+  } else if (weatherDescription.includes("fog")) {
+    return theme.fog;
   }
 }

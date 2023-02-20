@@ -25,7 +25,9 @@ export default function WeatherForecast(props) {
       )
       .then((response) => {
         setLoaded(true);
-        setForecast(response.data.daily);
+        let dailyForcast = response.data.daily;
+        dailyForcast.shift();
+        setForecast(dailyForcast);
       });
   }
 }
